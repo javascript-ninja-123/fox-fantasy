@@ -2,17 +2,48 @@
   "name": "fox-fantasy",
   "version": "1.0.0",
   "description": "lightweight functional promgramming library",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "dev-start": "nodemon index.js",
+    "dev":"watch 'npm run build'",
     "test": "jest",
-    "test-watch": "npm run test -- --watch"
+    "build": "babel src -d build",
+    "test:watch": "npm run test -- --watch",
+    "prepublish":"npm run build"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjdalsvndn9/fox-fantasy.git"
+  },
+  "keywords": [
+    "functional promgramming",
+    "loadash",
+    "underscore",
+    "react",
+    "vue",
+    "angular",
+    "ramda",
+    "fantasy",
+    "fp",
+    "ramda-fantasy",
+    "helper",
+    "lightweight"
+  ],
+  "bugs": {
+    "url": "https://github.com/tjdalsvndn9/fox-fantasy/issues"
   },
   "author": "Sungmin Yi",
   "license": "ISC",
   "devDependencies": {
     "axios": "^0.18.0",
-    "jest": "^22.4.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^22.4.3",
+    "watch": "^1.0.2"
   },
   "dependencies": {
     "ramda": "^0.25.0"
